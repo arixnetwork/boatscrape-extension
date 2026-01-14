@@ -2,147 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <style>
-    body {
-      width: 400px;
-      padding: 15px;
-      font-family: Arial, sans-serif;
-      max-height: 600px;
-      overflow-y: auto;
-    }
-    .logo {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-    .logo h1 {
-      color: #7f54b3;
-      margin: 5px 0;
-      font-size: 18px;
-    }
-    .btn {
-      background: #7f54b3;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      width: 100%;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    .btn:hover {
-      background: #6a429d;
-    }
-    .btn:disabled {
-      background: #cccccc;
-      cursor: not-allowed;
-    }
-    .formats {
-      display: flex;
-      gap: 10px;
-      margin: 15px 0;
-    }
-    .format-btn {
-      flex: 1;
-      padding: 8px;
-      background: #f0f0f0;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .format-btn.active {
-      background: #e0d6f0;
-      border-color: #7f54b3;
-    }
-    .options {
-      margin: 15px 0;
-      padding: 10px;
-      background: #f9f9f9;
-      border-radius: 4px;
-    }
-    .option-row {
-      display: flex;
-      justify-content: space-between;
-      margin: 8px 0;
-    }
-    .fields-container {
-      max-height: 200px;
-      overflow-y: auto;
-      margin-top: 10px;
-      padding: 10px;
-      background: white;
-      border-radius: 4px;
-      border: 1px solid #ddd;
-    }
-    .field-item {
-      display: flex;
-      align-items: center;
-      margin: 5px 0;
-    }
-    .field-item input {
-      margin-right: 10px;
-    }
-    .status {
-      margin-top: 15px;
-      padding: 10px;
-      background: #f9f9f9;
-      border-radius: 4px;
-      font-size: 12px;
-      display: none;
-    }
-    .progress {
-      height: 8px;
-      background: #e0e0e0;
-      border-radius: 4px;
-      margin-top: 10px;
-      overflow: hidden;
-    }
-    .progress-bar {
-      height: 100%;
-      background: #7f54b3;
-      width: 0%;
-      transition: width 0.3s;
-    }
-    .success { color: green; }
-    .error { color: red; }
-    .warning { color: orange; }
-  </style>
+  <title>Boatscrape</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="logo">
-    <h1>🚀 Boatscrape Pro</h1>
-    <p>Advanced WooCommerce Scraper</p>
-  </div>
-  
-  <div class="formats">
-    <div class="format-btn active" data-format="csv">CSV</div>
-    <div class="format-btn" data-format="xlsx">Excel</div>
-    <div class="format-btn" data-format="json">JSON</div>
-  </div>
-  
-  <div class="options">
-    <div class="option-row">
-      <label>
-        <input type="checkbox" id="scrapeAllPages"> Scrape All Pages
-      </label>
-    </div>
-    <div class="option-row">
-      <label>
-        <input type="checkbox" id="customFields"> Custom Fields
-      </label>
-    </div>
-    
-    <div class="fields-container" id="fieldsContainer" style="display:none;">
-      <!-- Fields will be populated here -->
-    </div>
-  </div>
-  
-  <button id="scrapeBtn" class="btn">Scrape Products</button>
-  
-  <div id="status" class="status"></div>
-  <div class="progress" id="progressContainer" style="display:none;">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
+  <h2>🚀 Boatscrape</h2>
+  <p>WooCommerce Product Scraper</p>
+
+  <button id="scrape">Scrape Products</button>
+
+  <select id="format">
+    <option value="csv">CSV</option>
+    <option value="json">JSON</option>
+  </select>
+
+  <button id="download">Download</button>
+
+  <div id="status"></div>
 
   <script src="popup.js"></script>
 </body>
